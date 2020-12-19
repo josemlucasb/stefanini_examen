@@ -27,17 +27,17 @@ public class CompleteRange {
 		// Generando numeros a comparar hasta el MAX valor
 		List<Integer> listAComparar = generarNumerosHastaRango(maxNumber);
 
-		List<Integer> numberParameterFaltantes = listAComparar.stream().filter(
-				x -> numberParameters.stream().allMatch(y -> !y.equals(x))).collect(Collectors.toList());
-		
+		List<Integer> numberParameterFaltantes = listAComparar.stream()
+				.filter(x -> numberParameters.stream().allMatch(y -> !y.equals(x))).collect(Collectors.toList());
+
 		System.out.println("\nNumeros faltantes:");
 		numberParameterFaltantes.forEach(x -> System.out.println(" -> " + x));
-		
+
 		// Agregando numeros faltantes
 		List<Integer> completeList = new ArrayList<Integer>();
 		completeList.addAll(numberParameters);
 		completeList.addAll(numberParameterFaltantes);
-		
+
 		return completeList.stream().sorted().collect(Collectors.toList());
 	}
 
@@ -52,7 +52,7 @@ public class CompleteRange {
 	}
 
 	public static void main(String... args) {
-		//Input
+		// Input
 		Collection<Integer> numberParameters = Arrays.asList(5, 3, 2, 6);
 
 		try {
