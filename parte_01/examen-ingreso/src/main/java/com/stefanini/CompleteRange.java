@@ -62,7 +62,6 @@ public class CompleteRange {
 			System.out.println("\nParametros completos:");
 			outNumberParameters.forEach(x -> System.out.println(" -> " + x));
 		} catch (Exception e) {
-			e.printStackTrace();
 			System.err.println("ERROR: " + e.getMessage());
 		}
 	}
