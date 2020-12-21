@@ -75,4 +75,9 @@ public class SucursalServiceImpl implements SucursalService {
 		return sucursalRepository.findAll();
 	}
 
+	@Override
+	public List<Sucursal> getSucursalByIdBanco(Long idBanco) {
+		return sucursalRepository.findAllByBancoIdBanco(idBanco);
+	}
+
 }

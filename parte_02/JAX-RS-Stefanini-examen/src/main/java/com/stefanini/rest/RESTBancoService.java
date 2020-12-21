@@ -26,7 +26,6 @@ public class RESTBancoService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response create(BancoDTO bancoDTO) {
-		System.out.println("+-create()");
 		return Response.status(Response.Status.OK).entity(bancoService.create(bancoDTO)).build();
 	}
 
@@ -35,21 +34,18 @@ public class RESTBancoService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response update(BancoDTO bancoDTO) {
-		System.out.println("+-update()");
 		return Response.status(Response.Status.OK).entity(bancoService.update(bancoDTO)).build();
 	}
 
 	@DELETE
 	@Path("/delete/{idBanco}")
 	public Response deleteById(@PathParam("idBanco") Long idBanco) {
-		System.out.println("+-deleteById() idBanco: " + idBanco);
 		return Response.status(Response.Status.OK).entity(bancoService.deleteById(idBanco)).build();
 	}
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getBancos() {
-		System.out.println("+-getBancos()");
 		return Response.status(Response.Status.OK).entity(bancoService.getBancos()).build();
 	}
 

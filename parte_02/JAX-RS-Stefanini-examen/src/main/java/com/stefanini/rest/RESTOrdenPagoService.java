@@ -27,7 +27,6 @@ public class RESTOrdenPagoService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response create(OrdenPagoDTO ordenPagoDTO) {
-		System.out.println("+-create()");
 		return Response.status(Response.Status.OK).entity(ordenPagoService.create(ordenPagoDTO)).build();
 	}
 
@@ -36,21 +35,18 @@ public class RESTOrdenPagoService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response update(OrdenPagoDTO ordenPagoDTO) {
-		System.out.println("+-update()");
 		return Response.status(Response.Status.OK).entity(ordenPagoService.update(ordenPagoDTO)).build();
 	}
 
 	@DELETE
 	@Path("/delete/{idOrdenPago}")
 	public Response deleteById(@PathParam("idOrdenPago") Long idOrdenPago) {
-		System.out.println("+-deleteById() idOrdenPago: " + idOrdenPago);
 		return Response.status(Response.Status.OK).entity(ordenPagoService.deleteById(idOrdenPago)).build();
 	}
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getOrdenesPago() {
-		System.out.println("+-getSucursales()");
 		return Response.status(Response.Status.OK).entity(ordenPagoService.getOrdenesPago()).build();
 	}
 
@@ -58,7 +54,6 @@ public class RESTOrdenPagoService {
 	@Path("/findBySucursalId/{idSucursal}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getOrdenesBySucursalIdAndMoneda(@PathParam("idSucursal") Long idSucursal, @QueryParam("moneda") String moneda) {
-		System.out.println("+-findBySucursalId() idSucursal: " + idSucursal + " moneda: " + moneda);
 		return Response.status(Response.Status.OK).entity(ordenPagoService.getOrdenesByFiltros(idSucursal, moneda)).build();
 	}
 

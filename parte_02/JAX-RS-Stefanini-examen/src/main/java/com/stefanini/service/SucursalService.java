@@ -15,4 +15,6 @@ public interface SucursalService {
 
 	List<Sucursal> getSucursales();
 
+	List<Sucursal> getSucursalByIdBanco(Long idBanco);
+
 }
